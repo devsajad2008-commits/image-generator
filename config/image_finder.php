@@ -1,0 +1,52 @@
+<?php
+
+return [
+    'enabled' => (bool) env('IMAGE_FINDER_ENABLED', true),
+    'data_path' => env('IMAGE_FINDER_DATA_PATH', storage_path('app/private/image-finder/batches')),
+    'default_count' => (int) env('IMAGE_FINDER_DEFAULT_COUNT', 3),
+    'min_width' => (int) env('IMAGE_FINDER_MIN_WIDTH', 800),
+    'min_height' => (int) env('IMAGE_FINDER_MIN_HEIGHT', 1),
+    'language' => env('IMAGE_FINDER_LANGUAGE', 'en'),
+    'max_file_size' => (int) env('IMAGE_FINDER_MAX_FILE_SIZE', 10485760),
+    'max_archive_size' => (int) env('IMAGE_FINDER_MAX_ARCHIVE_SIZE', 1073741824),
+    'format' => env('IMAGE_FINDER_FORMAT', 'webp'),
+    'disk' => env('IMAGE_FINDER_STORAGE_DISK', 'public'),
+    'timeout' => (int) env('IMAGE_FINDER_TIMEOUT', 30),
+    'job_timeout' => (int) env('IMAGE_FINDER_JOB_TIMEOUT', 1800),
+    'max_retries' => (int) env('IMAGE_FINDER_MAX_RETRIES', 5),
+    'retry_delay_ms' => (int) env('IMAGE_FINDER_RETRY_DELAY_MS', 250),
+    'retry_max_delay_ms' => (int) env('IMAGE_FINDER_RETRY_MAX_DELAY_MS', 4000),
+    'job_retry_delay_seconds' => (int) env('IMAGE_FINDER_JOB_RETRY_DELAY', 1),
+    'job_retry_max_delay_seconds' => (int) env('IMAGE_FINDER_JOB_RETRY_MAX_DELAY', 60),
+    'max_search_depth' => (int) env('IMAGE_FINDER_MAX_SEARCH_DEPTH', 6),
+    'max_candidates_per_product' => (int) env('IMAGE_FINDER_MAX_CANDIDATES_PER_PRODUCT', 20),
+    'min_candidate_confidence' => (float) env('IMAGE_FINDER_MIN_CANDIDATE_CONFIDENCE', 0.35),
+    'auto_approval_confidence' => (float) env('IMAGE_FINDER_AUTO_APPROVAL_CONFIDENCE', 0.68),
+    'concurrency' => (int) env('IMAGE_FINDER_CONCURRENCY', 3),
+    'provider_rate_limit' => (int) env('IMAGE_FINDER_PROVIDER_RATE_LIMIT', 30),
+    'max_provider_requests_per_batch' => (int) env('IMAGE_FINDER_MAX_PROVIDER_REQUESTS_PER_BATCH', 1000),
+    'max_products_per_batch' => (int) env('IMAGE_FINDER_MAX_PRODUCTS_PER_BATCH', 1000),
+    'providers' => [
+        'wikimedia' => [
+            'enabled' => (bool) env('IMAGE_FINDER_WIKIMEDIA_ENABLED', true),
+            'priority' => 10,
+        ],
+        'openverse' => [
+            'enabled' => (bool) env('IMAGE_FINDER_OPENVERSE_ENABLED', true),
+            'priority' => 20,
+            'client_id' => env('OPENVERSE_CLIENT_ID'),
+            'client_secret' => env('OPENVERSE_CLIENT_SECRET'),
+        ],
+        'serpapi' => [
+            'enabled' => (bool) env('IMAGE_FINDER_SERPAPI_ENABLED', true),
+            'priority' => 30,
+            'api_key' => env('SERPAPI_API_KEY'),
+        ],
+        'dataforseo' => [
+            'enabled' => (bool) env('IMAGE_FINDER_DATAFORSEO_ENABLED', true),
+            'login' => env('DATAFORSEO_LOGIN'),
+            'password' => env('DATAFORSEO_PASSWORD'),
+            'priority' => 40,
+        ],
+    ],
+];
