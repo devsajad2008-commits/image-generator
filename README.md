@@ -49,11 +49,11 @@ npm run build
   "products": [
     {
       "id": "sku-1001",
-      "name": "Samsung Galaxy A55",
+      "name": "Samsung Galaxy A02",
       "brand": "Samsung",
-      "model": "SM-A556E",
+      "model": "SM-A026E",
       "images": 3,
-      "search_terms": ["Samsung Galaxy A55 official product images"]
+      "search_terms": ["Samsung Galaxy A02 official product images"]
     }
   ],
   "settings": {
